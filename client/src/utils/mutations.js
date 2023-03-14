@@ -25,16 +25,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_PET = gql`
-  mutation addPet($thoughtText: String!) {
-    addPet(thoughtText: $thoughtText) {
+  mutation addPet($petText: String!) {
+    addPet(petText: $petText) {
       _id
       petText
       petAuthor
       createdAt
-      comments {
-        _id
-        commentText
-      }
     }
   }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import PetForm from '../components/ThoughtForm';
+import PetForm from '../components/PetForm';
 import PetList from '../components/PetList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -44,7 +44,7 @@ const Profile = () => {
 
         <div className="col-12 col-md-10 mb-5">
           <PetList
-            thoughts={user.pets}
+            pets={user.pets}
             title={`${user.username}'s pets...`}
             showTitle={false}
             showUsername={false}
