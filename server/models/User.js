@@ -22,7 +22,8 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 10,
+    minlength: 8,
+    validate: [passwordValidator, 'Password must contain at least one number, one special character, and one letter.'],
   },
   thoughts: [
     {
