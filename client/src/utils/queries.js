@@ -15,40 +15,80 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_PETS = gql`
-  query getPets {
-    thoughts {
-      _id
-      petText
-      petAuthor
-      createdAt
+// petsearch query
+export const QUERY_SEARCH_PETS = gql`
+  query searchPets (
+      $location: String
+      $animal: String
+      ){
+      searchPets (
+        location: $location
+        animal: $animal
+      ){
+        pets{
+          name
+          status
+          age
+          size
+          media {
+            photos {
+              size
+              url
+            }
+          }
+          _id
+          shelterPetId
+          breeds {
+            breed
+          }
+          sex
+          description
+          mix
+          shelterId
+          lastUpdate
+          animal
+        }
+      }
     }
-  }
 `;
 
 export const QUERY_SINGLE_PET = gql`
-  query getSinglePet($pettId: ID!) {
-    thought(petId: $petId) {
+  query getSinglePet($petId: ID!) {
+    pett(id: $id) {
       _id
-      petText
-      petAuthor
-      createdAt
-    }
-  }
-`;
-
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
-      pets {
-        _id
-        petText
-        petAuthor
-        createdAt
+      name
+      status
+      age
+      size
+      shelterPetId
+      sex
+      description
+      mix
+      shelterId
+      lastUpdate
+      animal
+      media {
+        photos {
+          size
+          url
+        }
       }
     }
   }
 `;
+
+// export const QUERY_ME = gql`
+//   query me {
+//     me {
+//       _id
+//       username
+//       email
+//       pets {
+//         _id
+//         petText
+//         petAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;
