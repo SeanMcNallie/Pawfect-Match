@@ -1,8 +1,8 @@
 import React from 'react';
 import { Fragment } from 'react-router-dom';
 
-import SearchBar from '../components/Search/SearchBar';
-import SearchResults from '../components/Search/SearchResults';
+import SearchBar from '../components/Search/searchBar';
+import SearchResults from '../components/Search/searchResults';
 
 const Search = () => {
     return (

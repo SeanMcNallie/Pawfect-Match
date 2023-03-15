@@ -25,7 +25,7 @@ export const QUERY_SEARCH_PETS = gql`
         location: $location
         animal: $animal
       ){
-        pets{
+        pets {
           name
           status
           age
@@ -36,37 +36,28 @@ export const QUERY_SEARCH_PETS = gql`
               url
             }
           }
-          _id
-          shelterPetId
           breeds {
             breed
           }
           sex
           description
-          mix
           shelterId
-          lastUpdate
-          animal
         }
       }
     }
 `;
 
-export const QUERY_SINGLE_PET = gql`
-  query getSinglePet($petId: ID!) {
-    pett(id: $id) {
-      _id
+export const QUERY_PET_DATA = gql`
+  query getPetData($petId: ID!) {
+    pet(id: $id) {
       name
       status
       age
       size
-      shelterPetId
       sex
       description
       mix
       shelterId
-      lastUpdate
-      animal
       media {
         photos {
           size
