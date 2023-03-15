@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const passwordValidator = function(value) {
+ const regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+ return regex.test(value);
+}
+
 const userSchema = new Schema({
   username: {
     type: String,
@@ -17,7 +22,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 10,
   },
   thoughts: [
     {
