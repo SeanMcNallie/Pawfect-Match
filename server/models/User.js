@@ -25,6 +25,13 @@ const userSchema = new Schema({
     minlength: 8,
     validate: [passwordValidator, 'Password must contain at least one number, one special character, and one letter.'],
   },
+  profile: {
+    name: {
+      type: String, 
+      required: true, 
+      unique: true,
+    }
+  },
   savedAnimals: [
     {
       type: Schema.Types.ObjectId,
