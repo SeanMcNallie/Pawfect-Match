@@ -25,10 +25,10 @@ const userSchema = new Schema({
     minlength: 8,
     validate: [passwordValidator, 'Password must contain at least one number, one special character, and one letter.'],
   },
-  thoughts: [
+  savedAnimals: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Pet',
     },
   ],
 });
