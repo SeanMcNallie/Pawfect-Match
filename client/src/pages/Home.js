@@ -4,6 +4,9 @@ import { useQuery } from '@apollo/client';
 import PetList from '../components/PetList';
 import PetForm from '../components/PetForm';
 
+// import Header from '../components/Header';
+// import Footer from '../components/Footer';
+
 import { QUERY_PETS } from '../utils/queries';
 
 // import authservice to check for logged in user
@@ -17,6 +20,7 @@ const Home = () => {
   // const loggedIn = Auth.loggedIn();
   
   return (
+    // <Header />
     <main>
       <div className="flex-row justify-center">
         <div
@@ -37,6 +41,7 @@ const Home = () => {
         </div>
       </div>
     </main>
+    // <Footer />
   );
 };
 
