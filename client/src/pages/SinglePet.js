@@ -46,12 +46,12 @@ const SinglePet = () => {
         </blockquote>
       </div>
 
-      {/* <div className="my-5">
+      <div className="my-5">
         <CommentList comments={pet.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm thoughtId={pet._id} />
-      </div> */}
+        <CommentForm petId={pet._id} />
+      </div>
     </div>
   );
 };

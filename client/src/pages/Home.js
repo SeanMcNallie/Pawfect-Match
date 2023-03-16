@@ -1,16 +1,10 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
+import React from "react";
+import { useQuery } from "@apollo/client";
 
-import PetList from '../components/PetList';
-import PetForm from '../components/PetForm';
+import PetList from "../components/PetList";
+import PetForm from "../components/PetForm";
 
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
-
-import { QUERY_PETS } from '../utils/queries';
-
-// import authservice to check for logged in user
-// import Auth from "../utils/auth";
+import { QUERY_PETS } from "../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PETS);
@@ -25,7 +19,7 @@ const Home = () => {
       <div className="flex-row justify-center">
         <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          style={{ border: "1px dotted #1a1a1a" }}
         >
           <PetForm />
         </div>
@@ -35,7 +29,7 @@ const Home = () => {
           ) : (
             <PetList
               pets={pets}
-              title="Some Feed for Thought(s)..."
+              title="I wanna new pet...."
             />
           )}
         </div>
