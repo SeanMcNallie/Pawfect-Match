@@ -48,40 +48,40 @@ const resolvers = {
 
       return { token, user };
     },
-    addComment: async (parent, { petId, commentText }, context) => {
-      if (context.user) {
-        return Pet.findOneAndUpdate(
-          { _id: petId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    removeComment: async (parent, { petId, commentId }, context) => {
-      if (context.user) {
-        return Pet.findOneAndUpdate(
-          { _id: petId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+//     addComment: async (parent, { petId, commentText }, context) => {
+//       if (context.user) {
+//         return Pet.findOneAndUpdate(
+//           { _id: petId },
+//           {
+//             $addToSet: {
+//               comments: { commentText, commentAuthor: context.user.username },
+//             },
+//           },
+//           {
+//             new: true,
+//             runValidators: true,
+//           }
+//         );
+//       }
+//       throw new AuthenticationError('You need to be logged in!');
+//     },
+//     removeComment: async (parent, { petId, commentId }, context) => {
+//       if (context.user) {
+//         return Pet.findOneAndUpdate(
+//           { _id: petId },
+//           {
+//             $pull: {
+//               comments: {
+//                 _id: commentId,
+//                 commentAuthor: context.user.username,
+//               },
+//             },
+//           },
+//           { new: true }
+//         );
+//       }
+//       throw new AuthenticationError('You need to be logged in!');
+//     },
   },
 };
 
