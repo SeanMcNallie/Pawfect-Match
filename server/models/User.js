@@ -46,10 +46,10 @@ const userSchema = new Schema({
       unique: true,
     },
   },
-  savedAnimals: [
+  pets: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Pet",
+      ref: 'Pet',
     },
   ],
 });
