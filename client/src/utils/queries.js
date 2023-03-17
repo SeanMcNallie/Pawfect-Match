@@ -50,13 +50,16 @@ export const QUERY_SEARCH_PETS = gql`
 export const QUERY_PET_DATA = gql`
   query getPetData($petId: ID!) {
     pet(id: $id) {
-      name
-      status
-      age
-      size
-      sex
-      description
-      mix
+    name
+    status
+    age
+    size
+    gender
+    type
+    breed
+    house_trained
+    organization
+    location
       shelterId
       media {
         photos {

@@ -24,6 +24,10 @@ const typeDefs = gql`
     size: Int
     gender: String
     type: String
+    breed: String
+    house_trained: Boolean
+    organization: String
+    location: String
   }
 
   type Comment {
