@@ -18,6 +18,16 @@ const petSchema = new Schema({
     type: Number,
     required: true,
   },
+  gender: {
+    type: String,
+    enum: ['male', 'female'],
+    required: true,
+  },
+  size: {
+    type: String,
+    enum: ['small', 'medium', 'large', 'extra-large'],
+    required: true,
+  },
   petText: {
     type: String,
     required: "You need to leave a thought!",
