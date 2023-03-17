@@ -15,37 +15,53 @@ export const QUERY_USER = gql`
   }
 `;
 
-// petsearch query
-export const QUERY_SEARCH_PETS = gql`
-  query searchPets (
-      $location: String
-      $animal: String
-      ){
-      searchPets (
-        location: $location
-        animal: $animal
-      ){
-        pets {
-          name
-          status
-          age
-          size
-          media {
-            photos {
-              size
-              url
-            }
-          }
-          breeds {
-            breed
-          }
-          sex
-          description
-          shelterId
-        }
+export const QUERY_OPEN_SEARCH_PETS = gql`
+  query GeneralSearchPets($postalCode: String!, $animalType: String!){
+    searchPets(postalCode: $postalCode, animalType: $animalType) {
+      breeds {
+        primary
+      }
+      location
+      name
+      type
+      photos {
+        medium
       }
     }
+  }
 `;
+
+// petsearch query
+// export const QUERY_SEARCH_PETS = gql`
+//   query searchPets (
+//       $location: String
+//       $animal: String
+//       ){
+//       searchPets (
+//         location: $location
+//         animal: $animal
+//       ){
+//         pets {
+//           name
+//           status
+//           age
+//           size
+//           media {
+//             photos {
+//               size
+//               url
+//             }
+//           }
+//           breeds {
+//             breed
+//           }
+//           sex
+//           description
+//           shelterId
+//         }
+//       }
+//     }
+// `;
 
 export const QUERY_PET_DATA = gql`
   query getPetData($petId: ID!) {

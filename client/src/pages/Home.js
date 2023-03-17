@@ -4,10 +4,10 @@ import { useQuery } from "@apollo/client";
 import PetList from "../components/PetList";
 import PetForm from "../components/PetForm";
 
-import { QUERY_SEARCH_PETS } from "../utils/queries";
+import { QUERY_OPEN_SEARCH_PETS } from "../utils/queries";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_SEARCH_PETS);
+  const { loading, data } = useQuery(QUERY_OPEN_SEARCH_PETS);
   const pets = data?.pets || [];
 
   // // if logged in, set this to true

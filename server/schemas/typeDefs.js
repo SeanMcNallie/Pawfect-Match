@@ -17,6 +17,19 @@ const typeDefs = gql`
     comments: [Comment]!
   }
 
+  type PetBreedData {
+    primary: String
+    secondary: String
+    mixed: Boolean
+  }
+
+  type PetPhoto {
+    small: String
+    medium: String
+    large: String
+    full: String
+  }
+
   type PetData {
     name: String
     status: Boolean
@@ -24,10 +37,11 @@ const typeDefs = gql`
     size: Int
     gender: String
     type: String
-    breed: String
+    breeds: PetBreedData
     house_trained: Boolean
     organization: String
     location: String
+    photos: [PetPhoto]
   }
 
   type Comment {
@@ -48,7 +62,7 @@ const typeDefs = gql`
     pets(username: String): [Pet]
     pet(petId: ID!): Pet
     me: User
-    searchPets(searchText: String!): [PetData]
+    searchPets(postalCode: String!, animalType: String!): [PetData]
   }
 
   type Mutation {

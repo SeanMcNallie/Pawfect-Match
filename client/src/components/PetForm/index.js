@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_PET } from '../../utils/mutations';
-import { QUERY_SEARCH_PETS, QUERY_ME, QUERY_PET_DATA} from '../../utils/queries';
+import { QUERY_OPEN_SEARCH_PETS, QUERY_ME, QUERY_PET_DATA} from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -18,7 +18,7 @@ const PetForm = () => {
         const { pets } = cache.readQuery({ query: QUERY_PET_DATA });
 
         cache.writeQuery({
-          query: QUERY_SEARCH_PETS,
+          query: QUERY_OPEN_SEARCH_PETS,
           data: { Pets: [addPets, ...pets] },
         });
       } catch (e) {
