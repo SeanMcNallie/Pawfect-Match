@@ -10,6 +10,14 @@ const petSchema = new Schema({
     type: String,
     required: true,
   },
+  breed: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
   petText: {
     type: String,
     required: "You need to leave a thought!",
