@@ -68,18 +68,18 @@ export const QUERY_PET_DATA = gql`
   }
 `;
 
-// export const QUERY_ME = gql`
-//   query me {
-//     me {
-//       _id
-//       username
-//       email
-//       pets {
-//         _id
-//         petText
-//         petAuthor
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      pets {
+        _id
+        petText
+        petAuthor
+        createdAt
+      }
+    }
+  }
+`;

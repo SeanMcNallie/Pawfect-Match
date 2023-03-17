@@ -4,17 +4,17 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-// import CommentList from '../components/CommentList';
-// import CommentForm from '../components/CommentForm';
+import PetList from '../components/PetList';
+import PetForm from '../components/PetForm';
 
-import { QUERY_SINGLE_PET } from '../utils/queries';
+import { QUERY_PET_DATA } from '../utils/queries';
 // import Auth from "../utils/auth";
 
 const SinglePet = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { petId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_PET, {
+  const { loading, data } = useQuery(QUERY_PET_DATA, {
     // pass URL parameter
     variables: { petId: petId },
   });
@@ -47,10 +47,10 @@ const SinglePet = () => {
       </div>
 
       <div className="my-5">
-        <CommentList comments={pet.comments} />
+        <PetList comments={pet.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm petId={pet._id} />
+        <PetForm petId={pet._id} />
       </div>
     </div>
   );

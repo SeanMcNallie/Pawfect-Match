@@ -16,7 +16,7 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import MainPage from './components/MainPage'
 import Footer from './components/Footer';
-import SearchForm from './components/Search/searchForm';
+import SearchBar from './components/Search/searchBar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
