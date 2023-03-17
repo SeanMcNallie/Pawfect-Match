@@ -28,9 +28,9 @@ const petSchema = new Schema({
     enum: ['small', 'medium', 'large', 'extra-large'],
     required: true,
   },
-  petText: {
+  petdescription: {
     type: String,
-    required: "You need to leave a thought!",
+    required: "What is the pets description?",
     minlength: 1,
     maxlength: 280,
     trim: true,
