@@ -1,10 +1,18 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const petSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
   petText: {
     type: String,
-    required: 'You need to leave a thought!',
+    required: "You need to leave a thought!",
     minlength: 1,
     maxlength: 280,
     trim: true,
@@ -40,6 +48,6 @@ const petSchema = new Schema({
   ],
 });
 
-const Pet = model('Pet', petSchema);
+const Pet = model("Pet", petSchema);
 
 module.exports = Pet;
