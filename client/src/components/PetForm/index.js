@@ -38,7 +38,7 @@ const PetForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addPet({
+      const { data } = await addPets({
         variables: {
           PetText,
           PetAuthor: Auth.getProfile().data.username,
