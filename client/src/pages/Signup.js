@@ -11,6 +11,9 @@ const Signup = () => {
     username: '',
     email: '',
     password: '',
+    name: '',
+    address: '',
+    phone: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -38,6 +41,7 @@ const Signup = () => {
     }
   };
 
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
@@ -56,7 +60,7 @@ const Signup = () => {
                   placeholder="Your username"
                   name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
@@ -73,6 +77,30 @@ const Signup = () => {
                   name="password"
                   type="password"
                   value={formState.password}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your name"
+                  name="name"
+                  type="text"
+                  value={formState.profile.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your address"
+                  name="address"
+                  type="text"
+                  value={formState.profile.address}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your phone"
+                  name="phone"
+                  type="text"
+                  value={formState.profile.phone}
                   onChange={handleChange}
                 />
                 <button
