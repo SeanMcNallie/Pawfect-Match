@@ -13,10 +13,10 @@ const resolvers = {
     },
     pets: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return pet.find(params).sort({ createdAt: -1 });
+      return Pet.find(params).sort({ createdAt: -1 });
     },
     pet: async (parent, { petId }) => {
-      return pet.findOne({ _id: petId });
+      return Pet.findOne({ _id: petId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -81,7 +81,7 @@ const resolvers = {
     },
     addPet: async (parent, { petText }, context) => {
       if (context.user) {
-        const pet = await pet.create({
+        const pet = await Pet.create({
           petText,
           petAuthor: context.user.username,
         });
