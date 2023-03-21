@@ -24,7 +24,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    searchPets: async (parent, { searchText }) => {
+    searchPets: async (parent, { postalCode, animalType }) => {
       // Check to see if there is a token
       const tokenData = process.env["petFinderToken"];
       let petFindertoken;
@@ -42,7 +42,7 @@ const resolvers = {
       }
 
       // SET A URL FOR PETFINDER API HERE
-      const url = `https://api.petfinder.com/v2/animals?type=dog&page=2&zipcode=${searchText}`;
+      const url = `https://api.petfinder.com/v2/animals?type=${animalType}&location=${postalCode}`;
       const response = await fetch(url, {
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const resolvers = {
       });
 
       const petData = await response.json();
-      console.log("PET DATA FROM API:", petData);
+      console.log("PET DATA FROM API:", JSON.stringify(petData, null, 2));
       return petData.animals;
     },
   },

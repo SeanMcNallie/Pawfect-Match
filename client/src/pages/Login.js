@@ -27,7 +27,7 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
+      // takes token and sets it to local storage
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
