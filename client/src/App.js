@@ -14,9 +14,9 @@ import Login from './pages/Login';
 import SinglePet from './pages/SinglePet';
 import Profile from './pages/Profile';
 import Header from './components/Header';
-import MainPage from './components/MainPage'
+
 import Footer from './components/Footer';
-// import SearchBar from './components/Search/searchBar';
+import SearchBar from './components/Search/searchBar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -49,7 +49,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-            <MainPage />
+            {/* <MainPage /> */}
             <Routes>
               <Route 
                 path="/"
