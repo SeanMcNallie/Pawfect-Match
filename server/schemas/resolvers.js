@@ -79,10 +79,16 @@ const resolvers = {
 
       return { token, user };
     },
-    addPet: async (parent, { petText }, context) => {
+    addPet: async (parent, { name, type, breed, age, gender, size, petdescription }, context) => {
       if (context.user) {
-        const pet = await pet.create({
-          petText,
+        const pet = await Pet.create({
+          name,
+          type,
+          breed,
+          age,
+          gender,
+          size,
+          petdescription,
           petAuthor: context.user.username,
         });
 
