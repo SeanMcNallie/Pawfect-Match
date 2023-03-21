@@ -24,8 +24,12 @@ export const QUERY_OPEN_SEARCH_PETS = gql`
       location
       name
       type
+      gender
+      size
+      description
+      status
       photos {
-        medium
+        full
       }
     }
   }

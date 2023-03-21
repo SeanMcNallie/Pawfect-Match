@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_OPEN_SEARCH_PETS } from '../utils/queries';
 import SearchBar from '../components/Search/searchBar';
-import SearchResults from '../components/Search/searchResults';
+// import SearchResults from '../components/Search/searchResults';
 
 const Search = () => {
     const [searchData, setSearchData] = useState({
@@ -25,7 +25,11 @@ const Search = () => {
             <div class ='col-12 col-md-10 mb-3 p-3'>
                 { loading ? <div>Loading data...</div> : (
                     data?.searchPets?.map(pet => (
-                        <div>{pet.name} {pet.type}</div>
+                        <div> 
+                      {/* <img src={pet.photos[0].full}/> */}
+                      {pet.name} {pet.type} {pet.breeds.primary}
+                        <div></div>
+                        </div>
                     ))
                 ) }
                 {/* <SearchResults /> */}

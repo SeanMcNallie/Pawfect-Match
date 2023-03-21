@@ -26,7 +26,7 @@ export default function SearchBar({ searchHandler }) {
                 <option>Cat</option>
                 <option>Horse</option>
             </select>
-            <button>Submit</button>
+            <button>Find My New Best Friend</button>
         </form>
     );
 }
