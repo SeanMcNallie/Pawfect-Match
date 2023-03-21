@@ -31,26 +31,22 @@ export const ADD_PET = gql`
       petText
       petAuthor
       createdAt
-      comments {
-        _id
-        commentText
-      }
     }
   }
 `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment($petId: ID!, $commentText: String!) {
-    addComment(petId: $petId, commentText: $commentText) {
-      _id
-      petText
-      petAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
-  }
-`;
+// export const ADD_COMMENT = gql`
+//   mutation addComment($thoughtId: ID!, $commentText: String!) {
+//     addComment(thoughtId: $thoughtId, commentText: $commentText) {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//         createdAt
+//       }
+//     }
+//   }
+// `;
