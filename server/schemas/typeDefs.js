@@ -13,13 +13,19 @@ type User {
   pets: [Pet]!
 }
 
-  type Pet {
-    _id: ID
-    petText: String
-    petAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
+type Pet {
+  _id: ID
+  name: String
+  type: String
+  breed: String
+  age: Int
+  gender: String
+  size: String
+  petdescription: String
+  petAuthor: String
+  createdAt: String
+  comments: [Comment]!
+}
 
   type PetBreedData {
     primary: String
