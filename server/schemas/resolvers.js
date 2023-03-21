@@ -12,7 +12,7 @@ const resolvers = {
       return User.findOne({ username }).populate("pets");
     },
     pets: async (parent, { username }) => {
-      const params = username ? { username } : {};
+      const params = username ? { petAuthor: username } : {};
       return Pet.find(params).sort({ createdAt: -1 });
     },
     pet: async (parent, { petId }) => {
@@ -79,10 +79,16 @@ const resolvers = {
 
       return { token, user };
     },
-    addPet: async (parent, { petText }, context) => {
+    addPet: async (parent, { name, type, breed, age, gender, size, petdescription }, context) => {
       if (context.user) {
         const pet = await Pet.create({
-          petText,
+          name,
+          type,
+          breed,
+          age,
+          gender,
+          size,
+          petdescription,
           petAuthor: context.user.username,
         });
 

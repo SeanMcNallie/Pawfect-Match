@@ -1,31 +1,38 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+    address: "",
+    phone: "",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+  
+    setFormState((prevState) => ({
+      ...prevState,
+      profile: {
+        ...prevState.profile,
+        [name]: value,
+      },
+    }));
   };
+  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    console.log("Submitting form:", formState);
 
     try {
       const { data } = await addUser({
@@ -46,7 +53,7 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
@@ -75,9 +82,33 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <input
+                  className="form-input"
+                  placeholder="Your name"
+                  name="name"
+                  type="text"
+                  value={formState.profile.name} // Update this line
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your address"
+                  name="address"
+                  type="text"
+                  value={formState.profile.address} // Update this line
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your phone"
+                  name="phone"
+                  type="text"
+                  value={formState.profile.phone} // Update this line
+                  onChange={handleChange}
+                />
                 <button
                   className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit
