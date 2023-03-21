@@ -1,15 +1,27 @@
 # Pawfect Match App
 
 # Application Description
-This application is for users looking to find their new best friend! This app allows the user to create a login, easily search for & find adoptable pets, save their favorite pets to their own profile, and be able to donate to an animal charity of their choice.
+This application is for users looking to find their new best friend! This app allows the user to create a login, easily search for & find adoptable pets, save their favorite pets to their own profile, and be able to donate to an animal charity of their choice. This application was built with MERN stack.
 
 # User Story
-As A person interested in adopting a pet
+AS A person wanting a pet
 I WANT to search & find adoptable pets in my area
 SO THAT I can find my next best friend & be happy
 
 # Acceptance Criteria
-
+GIVEN a pet resource website
+WHEN I load the pet resource website
+THEN I am presented with a homepage with options to Signup, Login, or Search.
+WHEN I click on Signup
+THEN I am presented with inputs for a username, email address, and a password
+WHEN the Signup button is clicked
+THEN my user account is created & I am logged into the site
+WHEN I click on Login & enter my account's credentials & submit
+THEN the modal closes & I am logged into the site
+WHEN I click on the Search Bar
+THEN I will be presented to put in a valid Zipcode & select the desired animal type
+WHEN I click on "Find My New Best Friend"
+THEN I am presented with adoptable pets near my specified area
 
 # Technologies Used
 * React
@@ -17,6 +29,7 @@ SO THAT I can find my next best friend & be happy
 * Mongo DB & Mongoose ODM
 * JWT
 * APIs
+* PWA Criteria - Webpack & Service Workers
 * Heroku for deployment
 
 # Installation & Usage

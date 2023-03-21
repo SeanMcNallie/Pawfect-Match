@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
@@ -9,6 +9,7 @@ import PetForm from '../components/PetForm';
 
 import { QUERY_PET_DATA } from '../utils/queries';
 // import Auth from "../utils/auth";
+
 
 const SinglePet = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
