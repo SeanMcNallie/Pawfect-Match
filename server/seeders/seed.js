@@ -1,5 +1,7 @@
 const db = require('../config/connection');
-const { User, Pet } = require('./petSeeds.json');
+const { User, Pet } = require('../models');
+const userSeeds = require('./userSeeds.json');
+const petSeeds = require('./petSeeds.json');
 
 db.once('open', async () => {
   try {
@@ -14,7 +16,7 @@ db.once('open', async () => {
         { username: petAuthor },
         {
           $addToSet: {
-            pet: _id,
+            pets: _id,
           },
         }
       );

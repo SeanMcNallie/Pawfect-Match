@@ -1,42 +1,42 @@
 [
   {
-    "petText": "This dog has the sweetest kisses and loves to play fetch, she will gladly take over the couch to sleep at any given time.",
-    "petAuthor": "Brian Kernighan"
+    "petText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+    "petAurthor": "Brian Kernighan"
   },
   {
-    "petText": "This cat is shy and loves to play when she warms up to her loving family.",
-    "petAuthor": "Max Kanat-Alexander"
+    "petText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
+    "petAurthor": "Max Kanat-Alexander"
   },
   {
-    "petText": "This puppy has not been house trained yet, loves to play, very hyper and will give kisses at every chance.",
-    "petAuthor": "Why The Lucky Stiff"
+    "petText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
+    "petAurthor": "Why The Lucky Stiff"
   },
   {
-    "petText": "Dog doesn't like to be around cats or guinea pigs but loves other dogs and kids.",
-    "petAuthor": "Kent Beck"
+    "petText": "I'm not a great programmer; I'm just a good programmer with great habits.",
+    "petAurthor": "Kent Beck"
   },
   {
-    "petText": "This boy is sweet, and has learned so many tricks, including riding a skateboard!",
-    "petAuthor": "Edward V. Berard"
+    "petText": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "petAurthor": "Edward V. Berard"
   },
   {
-    "petText": "This girl loves to be the center of attention when new people come around, she will be begging for pets.",
-    "petAuthor": "Alan Kay"
+    "petText": "The most disastrous thing that you can ever learn is your first programming language.",
+    "petAurthor": "Alan Kay"
   },
   {
-    "petText": "This cat is not too friendly with dogs, she would be a much better fit in an adult only home.",
-    "petAuthor": "C.A.R. Hoare"
+    "petText": "The most important property of a program is whether it accomplishes the intention of its user.",
+    "petAurthor": "C.A.R. Hoare"
   },
   {
-    "petText": "This little bird can't speak words but loves to be heard, she will let you know if she wants food or attention.",
-    "petAuthor": "David Thomas"
+    "petText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+    "petAurthor": "David Thomas"
   },
   {
-    "petText": "This angel has been through a lot and would love to have a loving family, he is gentle and great around kids and dogs.",
-    "petAuthor": "Donald Knuth"
+    "petText": "If you optimize everything, you will always be unhappy.",
+    "petAurthor": "Donald Knuth"
   },
   {
-    "petText": "She has been in this shelter for over 2 years and waiting for her new family to bring her home and love her.",
-    "petAuthor": "Lernantino"
+    "petText": "It's not a bug; it's an undocumented feature.",
+    "petAurthor": "Lernantino"
   }
 ]

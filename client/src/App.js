@@ -11,10 +11,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleThought from './pages/SingleThought';
+import SinglePet from './pages/SinglePet';
 import Profile from './pages/Profile';
 import Header from './components/Header';
+import MainPage from './components/MainPage'
 import Footer from './components/Footer';
+// import SearchBar from './components/Search/searchBar';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -47,6 +49,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
+            <MainPage />
             <Routes>
               <Route 
                 path="/"
@@ -69,8 +72,8 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                path="/thoughts/:thoughtId" 
-                element={<SingleThought />}
+                path="/pets/:petId" 
+                element={<SinglePet />}
               />
             </Routes>
           </div>
