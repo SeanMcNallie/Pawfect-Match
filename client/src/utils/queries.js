@@ -22,14 +22,14 @@ export const QUERY_OPEN_SEARCH_PETS = gql`
         primary
       }
       location
+      description
       name
       type
       gender
       size
-      description
       status
       photos {
-        full
+        medium
       }
     }
   }

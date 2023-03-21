@@ -42,13 +42,14 @@ type Pet {
 
   type PetData {
     name: String
-    status: Boolean
+    status: String
     age: String
-    size: Int
+    size: String
     gender: String
     type: String
     breeds: PetBreedData
-    house_trained: Boolean
+    description: String
+    house_trained: String
     organization: String
     location: String
     photos: [PetPhoto]
