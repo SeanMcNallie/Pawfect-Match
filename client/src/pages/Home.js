@@ -38,7 +38,7 @@ const Home = () => {
                 return (
                   <div className="p-3 my-3">
                     <h3>
-                      {pet.name} {pet.type} {pet.breeds.primary}
+                      {pet.name} - {pet.type} - {pet.status} - {pet.breeds.primary}
                     </h3>
                     <p>{pet.description}</p>
                     {pet?.photos?.[0] && <img src={pet.photos[0].medium} />}
