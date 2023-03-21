@@ -4,13 +4,17 @@ import { useQuery } from "@apollo/client";
 import PetList from "../components/PetList";
 import PetForm from "../components/PetForm";
 
-import { QUERY_PETS } from "../utils/queries";
+import { QUERY_OPEN_SEARCH_PETS } from "../utils/queries";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PETS);
+  const { loading, data } = useQuery(QUERY_OPEN_SEARCH_PETS);
   const pets = data?.pets || [];
 
+  // // if logged in, set this to true
+  // const loggedIn = Auth.loggedIn();
+  
   return (
+    // <Header />
     <main>
       <div className="flex-row justify-center">
         <div
@@ -31,6 +35,7 @@ const Home = () => {
         </div>
       </div>
     </main>
+    // <Footer />
   );
 };
 

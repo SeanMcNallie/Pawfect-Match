@@ -1,21 +1,32 @@
 import { useEffect, useRef, useState } from "react";
 
-function SearchBar({ setSearchResults }) {
-    const [searchText, setSearchText] = useState('');
-
+export default function SearchBar({ searchHandler }) {
+    const [postalCode, setPostalCode] = useState('');
+    const [animalType, setAnimalType] = useState('dog');
     const onInputChange = (e) => {
-        setSearchText(e.target.value);
+        setPostalCode(e.target.value);
+    }
+
+    const onSelectChange = (e) => {
+        console.log("SELECT VALUE", e.target.value);
+        setAnimalType(e.target.value);
     }
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-
+        searchHandler({location: postalCode, animalType});
     }
 
+    console.log("postalCode", postalCode);
     return (
         <form onSubmit={onSubmitHandler}>
-            <input type="text" name="searchText" value={searchText} onChange={onInputChange} />
-            
+            <input type="text" name="searchText" onChange={onInputChange} value={postalCode} />
+            <select onChange={onSelectChange}>
+                <option>Dog</option>
+                <option>Cat</option>
+                <option>Horse</option>
+            </select>
+            <button>Find My New Best Friend</button>
         </form>
     );
 }
