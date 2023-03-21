@@ -15,29 +15,77 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_PETS = gql`
-  query getPets {
-    pets {
-      _id
-      petText
-      petAuthor
-      createdAt
+export const QUERY_OPEN_SEARCH_PETS = gql`
+  query GeneralSearchPets($postalCode: String!, $animalType: String!){
+    searchPets(postalCode: $postalCode, animalType: $animalType) {
+      breeds {
+        primary
+      }
+      location
+      name
+      type
+      gender
+      size
+      description
+      status
+      photos {
+        full
+      }
     }
   }
 `;
 
-export const QUERY_SINGLE_PET = gql`
-  query getSinglepet($petId: ID!) {
-    pet(petId: $petId) {
-      _id
-      petText
-      petAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
+// petsearch query
+// export const QUERY_SEARCH_PETS = gql`
+//   query searchPets (
+//       $location: String
+//       $animal: String
+//       ){
+//       searchPets (
+//         location: $location
+//         animal: $animal
+//       ){
+//         pets {
+//           name
+//           status
+//           age
+//           size
+//           media {
+//             photos {
+//               size
+//               url
+//             }
+//           }
+//           breeds {
+//             breed
+//           }
+//           sex
+//           description
+//           shelterId
+//         }
+//       }
+//     }
+// `;
+
+export const QUERY_PET_DATA = gql`
+  query getPetData($petId: ID!) {
+    pet(id: $id) {
+    name
+    status
+    age
+    size
+    gender
+    type
+    breed
+    house_trained
+    organization
+    location
+      shelterId
+      media {
+        photos {
+          size
+          url
+        }
       }
     }
   }
