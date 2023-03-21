@@ -12,11 +12,11 @@ const resolvers = {
       return User.findOne({ username }).populate("pets");
     },
     pets: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return pet.find(params).sort({ createdAt: -1 });
+      const params = username ? { petAuthor: username } : {};
+      return Pet.find(params).sort({ createdAt: -1 });
     },
     pet: async (parent, { petId }) => {
-      return pet.findOne({ _id: petId });
+      return Pet.findOne({ _id: petId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
