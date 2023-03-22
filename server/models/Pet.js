@@ -29,9 +29,9 @@ const petSchema = new Schema({
     enum: ['small', 'medium', 'large', 'extra-large'],
     required: true,
   },
-  petdescription: {
+  description: {
     type: String,
-    required: "What is the pets description?",
+    required: "What is the pet's description?",
     minlength: 1,
     maxlength: 280,
     trim: true,
@@ -55,7 +55,8 @@ const petSchema = new Schema({
         maxlength: 280,
       },
       commentAuthor: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
       },
       createdAt: {

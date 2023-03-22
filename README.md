@@ -1,5 +1,17 @@
 # Pawfect Match App
 
+# Table of Contents
+
+- [Pawfect Match App](#pawfect-match-app)
+- [Application Description](#application-description)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Technologies Used](#technologies-used)
+- [Installation & Usage](#installation--usage)
+- [Application Screenshots](#application-screenshots)
+- [Contributors](#contributors)
+- [Deployed Application](#deployed-application)
+
 # Application Description
 This application is for users looking to find their new best friend! This app allows the user to create a login, easily search for & find adoptable pets, save their favorite pets to their own profile, and be able to donate to an animal charity of their choice. This application was built with MERN stack.
 
@@ -33,6 +45,11 @@ THEN I am presented with adoptable pets near my specified area
 * Heroku for deployment
 
 # Installation & Usage
+- Clone the repository
+- Navigate to the root directory of the project
+- Run npm install to install the required dependencies
+- Run npm run develop to start the development server
+- Open your browser and navigate to http://localhost:3000 to view the application
 
 # Application Screenshots
 
@@ -42,4 +59,6 @@ THEN I am presented with adoptable pets near my specified area
 * Jessica Easley
 * Sean McNallie
 
-# Deployed Application: 
+# Deployed Application:
+
+ https://pawfect-match-app.herokuapp.com/
