@@ -9,7 +9,7 @@ const passwordValidator = function (value) {
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
     trim: true,
     minlength: 5,
@@ -17,13 +17,13 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
     match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
-    required: true,
+    required: false,
     minlength: 8,
     validate: [
       passwordValidator,
@@ -33,16 +33,16 @@ const userSchema = new Schema({
   profile: {
     name: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
     },
     address: {
       type: String,
-      required: true,
+      required: false,
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
       match:  [/^\+?\d{1,4}[-.\s]?\(?(\d{1,3}[-.\s]?\d{1,4})\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/, 'Must match a valid phone number format!'],
     },
