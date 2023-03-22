@@ -8,30 +8,26 @@ import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    phone: '',
-    address: '',
-    email: '',
-    password: '',
+    username: "",
+    phone: "",
+    address: "",
+    email: "",
+    password: "",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-  
-    setFormState((prevState) => ({
-      ...prevState,
-      profile: {
-        ...prevState.profile,
-        [name]: value,
-      },
-    }));
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
-  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("Submitting form:", formState);
+    console.log(formState);
 
     try {
       const { data } = await addUser({
@@ -62,10 +58,10 @@ const Signup = () => {
                   placeholder="Your username"
                   name="username"
                   type="text"
-                  value={formState.username}
+                  value={formState.name}
                   onChange={handleChange}
                 />
-                  <input
+                <input
                   className="form-input"
                   placeholder="Your phone number"
                   name="phone"
@@ -73,23 +69,7 @@ const Signup = () => {
                   value={formState.name}
                   onChange={handleChange}
                 />
-                  <input
-                  className="form-input"
-                  placeholder="Your Address"
-                  name="address"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                  <input
-                  className="form-input"
-                  placeholder="Your phone number"
-                  name="phone"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                  <input
+                <input
                   className="form-input"
                   placeholder="Your Address"
                   name="address"
@@ -111,30 +91,6 @@ const Signup = () => {
                   name="password"
                   type="password"
                   value={formState.password}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your name"
-                  name="name"
-                  type="text"
-                  value={formState.profile.name} // Update this line
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your address"
-                  name="address"
-                  type="text"
-                  value={formState.profile.address} // Update this line
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your phone"
-                  name="phone"
-                  type="text"
-                  value={formState.profile.phone} // Update this line
                   onChange={handleChange}
                 />
                 <button
