@@ -1,21 +1,31 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type User {
-    _id: ID
-    username: String
-    email: String
-    password: String
-    pets: [Pet]!
-  }
 
-  type Pet {
-    _id: ID
-    petText: String
-    petAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
+type User {
+  _id: ID
+  username: String
+  email: String
+  password: String
+  name: String
+  address: String
+  phone: String
+  pets: [Pet]!
+}
+
+type Pet {
+  _id: ID
+  name: String
+  type: String
+  breed: String
+  age: Int
+  gender: String
+  size: String
+  petdescription: String
+  petAuthor: String
+  createdAt: String
+  comments: [Comment]!
+}
 
   type PetBreedData {
     primary: String
@@ -32,13 +42,14 @@ const typeDefs = gql`
 
   type PetData {
     name: String
-    status: Boolean
+    status: String
     age: String
-    size: Int
+    size: String
     gender: String
     type: String
     breeds: PetBreedData
-    house_trained: Boolean
+    description: String
+    house_trained: String
     organization: String
     location: String
     photos: [PetPhoto]

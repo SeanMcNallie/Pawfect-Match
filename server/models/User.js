@@ -30,22 +30,20 @@ const userSchema = new Schema({
       "Password must contain at least one number, one special character, and one letter.",
     ],
   },
-  profile: {
-    name: {
-      type: String,
-      required: false,
-      unique: true,
-    },
-    address: {
-      type: String,
-      required: false,
-    },
-    phone: {
-      type: String,
-      required: false,
-      unique: true,
-      match:  [/^\+?\d{1,4}[-.\s]?\(?(\d{1,3}[-.\s]?\d{1,4})\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/, 'Must match a valid phone number format!'],
-    },
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+    unique: true,
+    match: [/^\+?\d{1,4}[-.\s]?\(?(\d{1,3}[-.\s]?\d{1,4})\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/, 'Must match a valid phone number format!'],
   },
   pets: [
     {
