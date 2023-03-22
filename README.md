@@ -13,10 +13,27 @@
 - [Deployed Application](#deployed-application)
 
 # Application Description
-The Pawfect Match App is a full-stack web application that connects pet lovers with pets available for adoption. Users can create an account, login, search for pets available for adoption in their area, add pets to their account, and view a list of all the pets they have added. Users can also view the profiles of other pet owners and see the pets they have added to their account. Additionally, users can comment on the pets added by other users and delete their own pets and comments.
+This application is for users looking to find their new best friend! This app allows the user to create a login, easily search for & find adoptable pets, save their favorite pets to their own profile, and be able to donate to an animal charity of their choice. This application was built with MERN stack.
 
 # User Story
-As a pet owner or pet lover, I want to be able to create an account, login, and search for pets available for adoption in my area. I also want to be able to add pets to my account and view a list of all the pets I have added. Additionally, I want to be able to view the profile of other pet owners and see the pets they have added to their account. Finally, I want to be able to comment on the pets added by other users and delete my own pets and comments.
+AS A person wanting a pet
+I WANT to search & find adoptable pets in my area
+SO THAT I can find my next best friend & be happy
+
+# Acceptance Criteria
+GIVEN a pet resource website
+WHEN I load the pet resource website
+THEN I am presented with a homepage with options to Signup, Login, or Search.
+WHEN I click on Signup
+THEN I am presented with inputs for a username, email address, and a password
+WHEN the Signup button is clicked
+THEN my user account is created & I am logged into the site
+WHEN I click on Login & enter my account's credentials & submit
+THEN the modal closes & I am logged into the site
+WHEN I click on the Search Bar
+THEN I will be presented to put in a valid Zipcode & select the desired animal type
+WHEN I click on "Find My New Best Friend"
+THEN I am presented with adoptable pets near my specified area
 
 # Technologies Used
 * React
@@ -24,7 +41,7 @@ As a pet owner or pet lover, I want to be able to create an account, login, and 
 * Mongo DB & Mongoose ODM
 * JWT
 * APIs
-* Stripe 
+* PWA Criteria - Webpack & Service Workers
 * Heroku for deployment
 
 # Installation & Usage
@@ -41,7 +58,6 @@ As a pet owner or pet lover, I want to be able to create an account, login, and 
 * Devin Gomez
 * Jessica Easley
 * Sean McNallie
-* Thomas Luna
 
 # Deployed Application:
 
