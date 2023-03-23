@@ -1,7 +1,11 @@
 {
   "name": "pawfect-match",
   "version": "1.0.0",
-  "description": "",
+  "description": "place to find pets",
+  "engines": {
+    "node": "12.11.1",
+    "npm":  "6.14.8"
+    },
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
