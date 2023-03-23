@@ -9,7 +9,7 @@ const passwordValidator = function (value) {
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
     trim: true,
     minlength: 5,
@@ -17,13 +17,13 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
     match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
-    required: true,
+    required: false,
     minlength: 8,
     validate: [
       passwordValidator,
