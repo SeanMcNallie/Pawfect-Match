@@ -61,4 +61,4 @@ THEN I am presented with adoptable pets near my specified area
 
 # Deployed Application:
 
- https://pawfect-match-app.herokuapp.com/
+ https://pawfectmatch2.herokuapp.com/
